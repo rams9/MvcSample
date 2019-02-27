@@ -1,0 +1,64 @@
+﻿@model Demo1.Models.Student
+
+
+@{
+    ViewBag.Title = "Learn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Learn</h2>
+
+<h2>@DateTime.Now.ToShortDateString()</h2>
+
+@{
+
+    var date = DateTime.Now.ToShortDateString();
+    var message = "Hello Ram";
+}
+
+<h3>Today's date is: @date</h3>
+<h3>@message</h3>
+<h4>Display Text from code block</h4>
+
+@{
+    @:Today's  Date is : @date <br />
+    <text>Today's Text date is :</text>@date <br />
+    @message
+}
+
+
+@if (DateTime.IsLeapYear(DateTime.Now.Year))
+{
+    @DateTime.Now.Year @:is a leap year.
+}
+else
+{
+    @DateTime.Now.Year @:is not leap year.
+}
+
+
+@for (int i = 0; i < 5; i++)
+{
+    @i.ToString()<br />
+}
+
+
+<h2>Student Details</h2>
+<ul>
+    <li>Student Id: @Model.StudentId</li>
+    <li>Student Name: @Model.StudentName</li>
+    <li>Age: @Model.Age</li>
+
+</ul>
+
+@{ 
+    var str = "";
+
+    if(1>0)
+    {
+        str = "hey hello rams";
+    }
+
+
+}
+<p>@str</p>
